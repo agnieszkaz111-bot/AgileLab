@@ -2,43 +2,32 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>AgileLab – Twoja firma widoczna w sieci</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AgileLab – strony www, Google Maps, social media i automatyzacje dla lokalnych usługodawców.">
+    <title>AgileLab – Klienci z internetu pod kontrolą</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
-            --accent: #f97316;
-            --bg: #0b1120;
-            --bg-light: #020617;
-            --text: #e5e7eb;
-            --muted: #9ca3af;
-            --card-bg: #020617;
-            --border: #1e293b;
-            --success: #22c55e;
-            --danger: #ef4444;
-            --radius: 14px;
-            --shadow-soft: 0 18px 45px rgba(15,23,42,0.65);
-            --shadow-card: 0 14px 35px rgba(15,23,42,0.8);
+            --primary: #0F4C81;
+            --primary-light: #e5f0fa;
+            --accent: #F39C12;
+            --text-main: #222222;
+            --text-muted: #666666;
+            --bg-light: #f7f9fc;
+            --border-soft: #e2e6ee;
+            --radius: 12px;
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
+            --max-width: 1120px;
         }
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
-        html, body {
-            font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-            background: radial-gradient(circle at top, #0f172a 0, #020617 42%, #000 100%);
-            color: var(--text);
-            scroll-behavior: smooth;
-        }
-
         body {
-            line-height: 1.6;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text-main);
+            background-color: #ffffff;
+            line-height: 1.5;
         }
 
         img {
@@ -47,1500 +36,931 @@
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1120px;
+        .page {
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 1.6rem;
+            padding: 0 20px 60px;
         }
 
         header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            backdrop-filter: blur(18px);
-            background: linear-gradient(to bottom, rgba(15,23,42,0.95), rgba(15,23,42,0.75), transparent);
-            border-bottom: 1px solid rgba(148,163,184,0.2);
-        }
-
-        .nav {
+            padding: 20px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1rem 0;
+            gap: 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.03em;
         }
 
         .logo-mark {
-            width: 36px;
-            height: 36px;
-            border-radius: 999px;
-            background: radial-gradient(circle at 30% 20%, #60a5fa, #2563eb 45%, #4f46e5 80%);
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.3), 0 0 32px rgba(59,130,246,0.7);
-            position: relative;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary), #3c8dd9);
         }
 
-        .logo-mark::after {
-            content: "";
-            position: absolute;
-            inset: 9px;
-            border-radius: inherit;
-            border: 2px solid rgba(191,219,254,0.8);
-            box-shadow: 0 0 18px rgba(191,219,254,0.9);
-        }
-
-        .logo-text-main {
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            font-size: 1.1rem;
-        }
-
-        .logo-text-sub {
-            font-size: 0.72rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-        }
-
-        .nav-links {
+        .nav {
             display: flex;
-            gap: 1.4rem;
-            align-items: center;
+            gap: 24px;
+            font-size: 14px;
         }
 
-        .nav-links a {
-            font-size: 0.9rem;
-            color: var(--muted);
-            padding: 0.25rem 0;
-            position: relative;
+        .nav a {
+            color: var(--text-muted);
         }
 
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -0.15rem;
-            height: 2px;
-            width: 0;
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn,
+        button {
             border-radius: 999px;
-            background: linear-gradient(to right, #38bdf8, #6366f1, #f97316);
-            transition: width 0.18s ease-out;
-        }
-
-        .nav-links a:hover {
-            color: #e5e7eb;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .btn {
-            border-radius: 999px;
-            padding: 0.65rem 1.35rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid transparent;
+            border: none;
             cursor: pointer;
-            transition: all 0.16s ease-out;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            white-space: nowrap;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 12px 28px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), #4f46e5);
-            border-color: rgba(129,140,248,0.75);
-            color: white;
-            box-shadow: 0 12px 30px rgba(79,70,229,0.55);
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: var(--shadow-soft);
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, var(--primary-dark), #3730a3);
-            transform: translateY(-1px);
-            box-shadow: 0 16px 36px rgba(55,48,163,0.75);
+            background-color: #0b3a61;
         }
 
         .btn-outline {
-            border-color: rgba(148,163,184,0.7);
-            color: var(--muted);
-            background: rgba(15,23,42,0.7);
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
         }
 
-        .btn-outline:hover {
-            border-color: rgba(248,250,252,0.85);
-            color: #e5e7eb;
-            background: radial-gradient(circle at top, rgba(148,163,184,0.25), rgba(15,23,42,0.95));
-        }
+        /* HERO */
 
         .hero {
-            padding: 3.5rem 0 2.5rem;
-        }
-
-        .hero-grid {
             display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.7fr);
-            gap: 2.8rem;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 48px;
+            padding: 40px 0 60px;
             align-items: center;
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0.28rem 0.65rem;
-            border-radius: 999px;
-            border: 1px solid rgba(148,163,184,0.35);
-            background: rgba(15,23,42,0.7);
-            color: var(--muted);
-            font-size: 0.75rem;
-            margin-bottom: 0.9rem;
-        }
-
-        .badge-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 999px;
-            background: radial-gradient(circle at center, #22c55e, #16a34a);
-            box-shadow: 0 0 12px rgba(34,197,94,0.9);
+        .hero-kicker {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--primary);
+            margin-bottom: 12px;
         }
 
         .hero h1 {
-            font-size: clamp(2.4rem, 3.3vw, 3rem);
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.8rem;
+            font-size: 40px;
+            line-height: 1.15;
+            margin: 0 0 16px;
         }
 
         .hero h1 span {
-            background: linear-gradient(to right, #60a5fa, #a855f7, #f97316);
-            -webkit-background-clip: text;
-            color: transparent;
+            color: var(--primary);
         }
 
         .hero-subtitle {
-            color: var(--muted);
-            font-size: 0.98rem;
-            max-width: 32rem;
-            margin-bottom: 1.3rem;
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            max-width: 420px;
+        }
+
+        .hero-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .hero-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .hero-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-size: 18px;
+            line-height: 1;
+            margin-top: 1px;
         }
 
         .hero-actions {
             display: flex;
+            gap: 16px;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 1.1rem;
         }
 
         .hero-note {
-            font-size: 0.78rem;
-            color: var(--muted);
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        .hero-note span {
-            color: #a5b4fc;
-            font-weight: 500;
-        }
-
-        .hero-right {
+        .hero-image-wrapper {
             position: relative;
         }
 
-        .hero-card {
-            background: radial-gradient(circle at top left, rgba(59,130,246,0.12), rgba(15,23,42,0.98));
-            border-radius: 22px;
-            padding: 1.4rem 1.3rem;
+        .hero-photo {
+            border-radius: 24px;
+            overflow: hidden;
             box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(148,163,184,0.45);
         }
 
-        .hero-card-header {
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -16px;
+            left: 16px;
+            background-color: #ffffff;
+            border-radius: 999px;
+            padding: 10px 16px;
+            box-shadow: var(--shadow-soft);
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1rem;
+            gap: 8px;
+            font-size: 13px;
         }
 
-        .hero-card-title {
-            font-size: 0.8rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #27ae60;
         }
 
-        .status-chip {
-            font-size: 0.72rem;
-            padding: 0.18rem 0.55rem;
-            border-radius: 999px;
-            border: 1px solid rgba(52,211,153,0.7);
-            color: #bbf7d0;
-            background: rgba(22,163,74,0.18);
-        }
-
-        .hero-card-body {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-            gap: 1rem;
-            align-items: start;
-        }
-
-        .card-block {
-            background: rgba(15,23,42,0.9);
-            border-radius: 14px;
-            padding: 0.85rem 0.9rem;
-            border: 1px dashed rgba(75,85,99,0.9);
-        }
-
-        .card-block h3 {
-            font-size: 0.88rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .card-block p {
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
-
-        .before-after {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.6rem;
-            margin-top: 0.6rem;
-        }
-
-        .pill {
-            font-size: 0.72rem;
-            padding: 0.22rem 0.55rem;
-            border-radius: 999px;
-            background: rgba(15,23,42,0.92);
-            border: 1px solid rgba(55,65,81,0.95);
-            color: var(--muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .pill.bad {
-            border-color: rgba(248,113,113,0.8);
-            color: #fecaca;
-        }
-
-        .pill.good {
-            border-color: rgba(52,211,153,0.75);
-            color: #bbf7d0;
-        }
-
-        .hero-metrics {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.55rem;
-            margin-top: 0.8rem;
-        }
-
-        .metric {
-            border-radius: 999px;
-            border: 1px solid rgba(148,163,184,0.35);
-            padding: 0.55rem 0.7rem;
-            font-size: 0.72rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.05rem;
-            background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(15,23,42,0.9));
-        }
-
-        .metric span:first-child {
-            font-weight: 600;
-        }
-
-        .metric span:last-child {
-            color: var(--muted);
-        }
+        /* Sections */
 
         section {
-            padding: 2.6rem 0 2.2rem;
-        }
-
-        .section-header {
-            margin-bottom: 1.4rem;
+            padding: 48px 0;
         }
 
         .section-kicker {
-            font-size: 0.76rem;
+            font-size: 13px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--muted);
-            margin-bottom: 0.4rem;
+            letter-spacing: 0.14em;
+            color: var(--primary);
+            margin-bottom: 8px;
         }
 
         .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.4rem;
+            font-size: 28px;
+            margin: 0 0 12px;
         }
 
         .section-subtitle {
-            color: var(--muted);
-            font-size: 0.95rem;
-            max-width: 32rem;
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 520px;
         }
 
-        .benefits-grid {
+        .two-column {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-soft);
+            padding: 24px;
+        }
+
+        .card-muted {
+            background-color: var(--bg-light);
+            border-color: transparent;
+        }
+
+        .section-bg-light {
+            background-color: var(--bg-light);
+        }
+
+        /* "Czy to o Tobie?" */
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+            color: var(--text-muted);
+        }
+
+        .about-list li {
+            margin-bottom: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .about-list li::before {
+            content: "—";
+            color: var(--primary);
+        }
+
+        /* Problems */
+
+        .problems-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
+            gap: 24px;
+            margin-top: 32px;
         }
 
-        .benefit-card {
-            background: radial-gradient(circle at top left, rgba(37,99,235,0.18), rgba(15,23,42,0.98));
+        .problem-item {
+            background-color: #ffffff;
             border-radius: var(--radius);
-            padding: 1rem 0.95rem;
-            border: 1px solid rgba(148,163,184,0.4);
-            box-shadow: var(--shadow-card);
-        }
-
-        .benefit-icon {
-            width: 26px;
-            height: 26px;
-            border-radius: 999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at center, #38bdf8, #0f172a);
-            color: #e0f2fe;
-            font-size: 0.8rem;
-            margin-bottom: 0.55rem;
-        }
-
-        .benefit-card h3 {
-            font-size: 0.95rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .benefit-card p {
-            font-size: 0.86rem;
-            color: var(--muted);
-            margin-bottom: 0.4rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.4rem;
-        }
-
-        .service-card {
-            background: linear-gradient(to bottom right, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
-            border-radius: var(--radius);
-            padding: 1.1rem 1.05rem;
-            border: 1px solid rgba(75,85,99,0.9);
-            box-shadow: var(--shadow-card);
-        }
-
-        .service-label {
-            font-size: 0.7rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            margin-bottom: 0.3rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.05rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .service-desc {
-            font-size: 0.88rem;
-            color: var(--muted);
-            margin-bottom: 0.6rem;
-        }
-
-        .service-list {
-            list-style: none;
-            margin-bottom: 0.55rem;
-        }
-
-        .service-list li {
-            font-size: 0.84rem;
-            color: #e5e7eb;
-            margin-bottom: 0.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .service-list li::before {
-            content: "•";
-            color: #38bdf8;
-            font-size: 1rem;
-        }
-
-        .service-tagline {
-            font-size: 0.8rem;
-            color: var(--muted);
-            border-top: 1px solid rgba(55,65,81,0.9);
-            padding-top: 0.45rem;
-            margin-top: 0.4rem;
-        }
-
-        .before-after-block {
-            margin-top: 0.5rem;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.6rem;
-        }
-
-        .ba-card {
-            border-radius: 10px;
-            padding: 0.5rem 0.6rem;
-            background: rgba(15,23,42,0.95);
-            border: 1px dashed rgba(75,85,99,0.95);
-            font-size: 0.78rem;
-        }
-
-        .ba-title {
-            font-weight: 600;
-            margin-bottom: 0.18rem;
-        }
-
-        .ba-list {
-            list-style: none;
-        }
-
-        .ba-list li {
-            margin-bottom: 0.15rem;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1rem;
-        }
-
-        .pricing-card {
-            background: radial-gradient(circle at top, rgba(37,99,235,0.2), rgba(15,23,42,0.98));
-            border-radius: var(--radius);
-            padding: 1.05rem 1rem;
-            border: 1px solid rgba(129,140,248,0.65);
-            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-soft);
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 10px;
         }
 
-        .pricing-card.secondary {
-            background: linear-gradient(to bottom right, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
-            border-color: rgba(75,85,99,0.95);
+        .problem-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 10px;
         }
 
-        .pricing-name {
-            font-size: 0.92rem;
+        .problem-label {
+            font-size: 13px;
             font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
         }
 
-        .pricing-price {
-            font-size: 1.15rem;
-            font-weight: 700;
+        .problem-title {
+            font-size: 18px;
+            margin: 0;
         }
 
-        .pricing-meta {
-            font-size: 0.75rem;
-            color: var(--muted);
+        .problem-text {
+            font-size: 14px;
+            color: var(--text-muted);
         }
 
-        .pricing-list {
-            list-style: none;
-            font-size: 0.82rem;
-            color: #e5e7eb;
-            margin-top: 0.2rem;
+        /* How we help */
+
+        .how-text p {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--text-muted);
         }
 
-        .pricing-list li {
-            margin-bottom: 0.2rem;
+        .how-text ul {
+            margin: 8px 0 0 0;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 14px;
         }
 
-        .pricing-benefit {
-            font-size: 0.78rem;
-            color: var(--muted);
-            margin-top: 0.35rem;
+        .how-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
         }
 
-        .pricing-badge {
-            font-size: 0.68rem;
+        /* Steps */
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .step-card {
+            background-color: #ffffff;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-soft);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .step-image {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .step-number {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 0.16em;
-            color: #f97316;
         }
 
-        .pricing-subgrid {
+        .step-title {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Packages */
+
+        .packages-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 1.3rem;
+            gap: 24px;
+            margin-top: 32px;
         }
 
-        .pricing-subcard {
-            background: rgba(15,23,42,0.96);
+        .package-card {
+            background-color: #ffffff;
             border-radius: var(--radius);
-            padding: 0.9rem 0.85rem;
-            border: 1px solid rgba(75,85,99,0.9);
-            box-shadow: 0 16px 40px rgba(15,23,42,0.9);
+            border: 1px solid var(--border-soft);
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: var(--shadow-soft);
         }
 
-        .pricing-subname {
-            font-size: 0.9rem;
-            margin-bottom: 0.2rem;
+        .package-featured {
+            border-color: var(--primary);
         }
 
-        .pricing-subprice {
-            font-size: 1rem;
+        .package-badge {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #ffffff;
+            background-color: var(--primary);
+            align-self: flex-start;
+            padding: 4px 10px;
+            border-radius: 999px;
+        }
+
+        .package-name {
+            font-size: 20px;
             font-weight: 600;
         }
 
-        .pricing-submeta {
-            font-size: 0.74rem;
-            color: var(--muted);
-            margin-bottom: 0.45rem;
+        .package-desc {
+            font-size: 14px;
+            color: var(--text-muted);
         }
 
-        .pricing-sublist {
+        .package-price {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .package-list {
             list-style: none;
-            font-size: 0.8rem;
-            color: #e5e7eb;
+            padding: 0;
+            margin: 8px 0 0;
+            font-size: 14px;
+            color: var(--text-muted);
         }
 
-        .pricing-sublist li {
-            margin-bottom: 0.18rem;
+        .package-list li {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
+        .package-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 600;
         }
 
-        .testimonial-card {
-            background: linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(15,23,42,0.95));
-            border-radius: var(--radius);
-            padding: 0.9rem 0.85rem;
-            border: 1px solid rgba(75,85,99,0.95);
+        .package-footer {
+            margin-top: 8px;
+            display: flex;
+            justify-content: flex-start;
         }
 
-        .testimonial-quote {
-            font-size: 0.86rem;
-            color: #e5e7eb;
-            margin-bottom: 0.4rem;
-        }
-
-        .testimonial-author {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .stars {
-            color: #fbbf24;
-            font-size: 0.8rem;
-            margin-bottom: 0.3rem;
-        }
+        /* Contact */
 
         .contact-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-            gap: 1.4rem;
-            align-items: start;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 36px;
+            align-items: center;
         }
 
-        .contact-card {
-            background: linear-gradient(to bottom right, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
-            border-radius: var(--radius);
-            padding: 1.1rem 1.05rem;
-            border: 1px solid rgba(75,85,99,0.95);
-            box-shadow: var(--shadow-card);
+        .contact-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
         }
 
         .contact-form {
-            display: grid;
-            gap: 0.7rem;
+            background-color: #ffffff;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-soft);
+            padding: 24px;
         }
 
-        .field {
+        .form-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
+        .form-group {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.15rem;
+            gap: 4px;
+            font-size: 14px;
         }
 
-        .field label {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .field input,
-        .field select,
-        .field textarea {
-            background: rgba(15,23,42,0.96);
-            border-radius: 999px;
-            border: 1px solid rgba(55,65,81,0.95);
-            padding: 0.55rem 0.8rem;
-            color: #e5e7eb;
-            font-size: 0.85rem;
-            outline: none;
-            transition: border-color 0.16s ease-out, box-shadow 0.16s ease-out, background 0.16s ease-out;
-        }
-
-        .field textarea {
-            border-radius: 14px;
-            min-height: 110px;
-            resize: vertical;
-        }
-
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus {
-            border-color: rgba(59,130,246,0.95);
-            box-shadow: 0 0 0 1px rgba(37,99,235,0.8), 0 0 0 8px rgba(37,99,235,0.18);
-            background: rgba(15,23,42,0.98);
-        }
-
-        .contact-help {
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin-top: 0.3rem;
-        }
-
-        .contact-info-card {
-            background: radial-gradient(circle at top left, rgba(59,130,246,0.22), rgba(15,23,42,0.98));
-            border-radius: var(--radius);
-            padding: 1.1rem 1.05rem;
-            border: 1px solid rgba(129,140,248,0.65);
-            box-shadow: var(--shadow-card);
-            font-size: 0.86rem;
-        }
-
-        .contact-info-item {
-            margin-bottom: 0.4rem;
-        }
-
-        .contact-info-label {
-            font-size: 0.78rem;
-            color: var(--muted);
-        }
-
-        .contact-info-value {
+        .form-group label {
             font-weight: 500;
         }
 
-        .contact-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.75rem;
-            color: #bbf7d0;
-            padding: 0.2rem 0.6rem;
-            border-radius: 999px;
-            background: rgba(22,163,74,0.2);
-            border: 1px solid rgba(52,211,153,0.7);
-            margin-top: 0.4rem;
+        .form-group input,
+        .form-group textarea {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-soft);
+            font-family: inherit;
+            font-size: 14px;
         }
 
-        .form-status {
-            margin-top: 0.5rem;
-            font-size: 0.8rem;
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-footer {
+            margin-top: 8px;
             display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .form-status span.dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 999px;
+        .form-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-muted);
         }
 
-        .form-status.loading span.dot {
-            background: #38bdf8;
-            box-shadow: 0 0 8px rgba(56,189,248,0.9);
-        }
-
-        .form-status.success span.dot {
-            background: #22c55e;
-            box-shadow: 0 0 8px rgba(34,197,94,0.9);
-        }
-
-        .form-status.error span.dot {
-            background: #ef4444;
-            box-shadow: 0 0 8px rgba(239,68,68,0.9);
-        }
-
-        .form-status-text {
-            color: var(--muted);
+        .form-consent input {
+            margin-top: 2px;
         }
 
         footer {
-            border-top: 1px solid rgba(30,64,175,0.7);
-            padding: 1.6rem 0 1.4rem;
-            margin-top: 1.4rem;
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .footer-grid {
+            border-top: 1px solid var(--border-soft);
+            padding-top: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 1rem;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 1rem;
+        footer a {
+            color: var(--text-muted);
         }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
 
         @media (max-width: 960px) {
-            .hero-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-            .hero-right {
-                order: -1;
-            }
-            .benefits-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-            .services-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-            .pricing-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-            .pricing-subgrid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-            .testimonials-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+            .hero,
+            .two-column,
             .contact-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        @media (max-width: 720px) {
-            .nav-links {
-                display: none;
-            }
-            header {
-                background: rgba(15,23,42,0.98);
-            }
-
-            body {
-                padding-bottom: 2rem;
-            }
-
-            section {
-                padding: 2rem 0 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.35rem;
-                line-height: 1.3;
-            }
-
-            .section-subtitle {
-                font-size: 0.9rem;
+                grid-template-columns: 1fr;
             }
 
             .hero {
-                padding-top: 2rem;
+                padding-top: 20px;
+            }
+
+            .hero-image-wrapper {
+                order: -1;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 32px;
             }
 
-            .hero-subtitle {
-                font-size: 0.9rem;
+            .problems-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 0 16px 40px;
             }
 
             .hero-actions {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: flex-start;
             }
 
-            .benefits-grid {
+            .problems-grid {
                 grid-template-columns: 1fr;
             }
 
-            .service-card {
-                padding: 1.2rem;
-            }
-
-            .service-card h3 {
-                font-size: 1rem;
-            }
-
-            .service-desc {
-                font-size: 0.85rem;
-            }
-
-            .pricing-grid,
-            .pricing-subgrid {
+            .steps-grid {
                 grid-template-columns: 1fr;
             }
 
-            .pricing-card,
-            .pricing-subcard {
-                padding: 1.2rem;
+            .nav {
+                display: none;
             }
 
-            .pricing-price {
-                font-size: 1.3rem;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial-card {
-                padding: 1.1rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-card,
-            .contact-info-card {
-                padding: 1.2rem;
-            }
-
-            .field input,
-            .field select,
-            .field textarea {
-                font-size: 1rem;
-                padding: 0.8rem 1rem;
-            }
-
-            .btn {
-                font-size: 1rem;
-                padding: 0.9rem 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .benefit-card {
-                padding: 1rem;
-            }
-
-            .service-card {
-                padding: 1rem;
+            header {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container nav">
+<div class="page">
+
+    <!-- HEADER -->
+    <header>
         <div class="logo">
             <div class="logo-mark"></div>
-            <div>
-                <div class="logo-text-main">AgileLab</div>
-                <div class="logo-text-sub">Digital dla lokalnych usług</div>
-            </div>
+            <span>AgileLab</span>
         </div>
-        <nav class="nav-links">
-            <a href="#dlaczego">Dlaczego my</a>
-            <a href="#uslugi">Usługi</a>
-            <a href="#cennik">Cennik</a>
-            <a href="#opinie">Opinie</a>
-            <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+        <nav class="nav">
+            <a href="#problems">Problemy</a>
+            <a href="#how">Jak pomagamy</a>
+            <a href="#process">Proces</a>
+            <a href="#packages">Pakiety</a>
+            <a href="#contact">Kontakt</a>
         </nav>
-    </div>
-</header>
+    </header>
 
-<main>
     <!-- HERO -->
     <section class="hero">
-        <div class="container hero-grid">
+        <div>
+            <div class="hero-kicker">Doradztwo sprzedażowe i CRM</div>
+            <h1>Twoja firma traci klientów z internetu. <span>My pomagamy to zatrzymać.</span></h1>
+            <p class="hero-subtitle">
+                Układamy proces od pierwszego leada z formularza do zamkniętej sprzedaży – tak, żeby nic nie ginęło po drodze.
+            </p>
+            <ul class="hero-list">
+                <li>Wyłapujesz wszystkie leady z wielu kanałów w jednym miejscu.</li>
+                <li>Reagujesz na zapytania szybciej, zanim klient wybierze konkurencję.</li>
+                <li>Masz prosty, przejrzysty widok tego, co dzieje się w sprzedaży.</li>
+            </ul>
+            <div class="hero-actions">
+                <a href="#packages" class="btn btn-primary">Zobacz pakiety współpracy</a>
+                <span class="hero-note">Albo zacznij od krótkiej rozmowy o Twojej sytuacji.</span>
+            </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <div class="hero-photo">
+                <!-- TU wstawiasz swoje zdjęcie -->
+                <img src="images/hero.jpg" alt="Doradca AgileLab pracująca z klientami online">
+            </div>
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Realne wdrożenia, nie „kolejny system do klikania”.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CZY TO O TOBIE -->
+    <section id="about">
+        <div class="two-column">
+            <div class="about-image">
+                <img src="images/about-context.jpg" alt="Właściciel firmy pracujący przy laptopie">
+            </div>
             <div>
-                <div class="badge">
-                    <div class="badge-dot"></div>
-                    Pomagamy małym firmom zaistnieć w sieci
-                </div>
-                <h1>
-                    Twoja lokalna firma <span>wreszcie widoczna</span> w internecie
-                </h1>
-                <p class="hero-subtitle">
-                    Tworzymy strony, konfigurujemy Google Maps, prowadzimy social media i wdrażamy automatyzacje
-                    dla hydraulików, kosmetyczek, ogrodników, salonów i innych lokalnych usługodawców.
-                    Ty skupiasz się na klientach, my zajmujemy się całą resztą.
+                <div class="section-kicker">Czy to o Tobie</div>
+                <h2 class="section-title">Masz zapytania z internetu, ale czujesz, że nie wykorzystujesz ich potencjału.</h2>
+                <p class="section-subtitle">
+                    Leady wpadają z różnych miejsc, ktoś oddzwania, ktoś odpisuje – ale na końcu nie wiesz,
+                    ile tak naprawdę tracisz i dlaczego.
                 </p>
-                <div class="hero-actions">
-                    <a href="#kontakt" class="btn btn-primary">
-                        Umów bezpłatną konsultację
-                    </a>
-                    <a href="#cennik" class="btn btn-outline">
-                        Zobacz pakiety i ceny
-                    </a>
-                </div>
-                <p class="hero-note">
-                    <span>Bez długoterminowych umów.</span> Jasne zasady, realne efekty, język bez technicznego żargonu.
-                </p>
-            </div>
-
-            <div class="hero-right">
-                <div class="hero-card">
-                    <div class="hero-card-header">
-                        <div>
-                            <div class="hero-card-title">Wyniki klienta po współpracy</div>
-                            <div class="hero-note">Przykład: hydraulik z Warszawy</div>
-                        </div>
-                        <div class="status-chip">+73% więcej telefonów</div>
-                    </div>
-                    <div class="hero-card-body">
-                        <div class="card-block">
-                            <h3>Widoczność w Google</h3>
-                            <p>Przed współpracą firma nie pojawiała się w Google Maps. Po naszej konfiguracji klienci
-                                znajdują ją po wpisaniu: „hydraulik Warszawa”.</p>
-                            <div class="before-after">
-                                <span class="pill bad">Przed: brak na mapie</span>
-                                <span class="pill good">Po: widoczny w top 3 lokalnych wyników</span>
-                            </div>
-                        </div>
-                        <div class="card-block">
-                            <h3>Opinie i zaufanie</h3>
-                            <p>Klient miał 0 opinii. Dziś ma 37 pozytywnych recenzji i stały napływ zapytań.</p>
-                            <div class="before-after">
-                                <span class="pill bad">Przed: 0 opinii</span>
-                                <span class="pill good">Po: 37 opinii ★ 4,9/5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-metrics">
-                        <div class="metric">
-                            <span>+73%</span>
-                            <span>więcej telefonów z Google Maps</span>
-                        </div>
-                        <div class="metric">
-                            <span>3 dni</span>
-                            <span>od startu do pierwszych zapytań</span>
-                        </div>
-                        <div class="metric">
-                            <span>100%</span>
-                            <span>obsługi online po naszej stronie</span>
-                        </div>
-                    </div>
-                </div>
+                <ul class="about-list">
+                    <li>Formularze kontaktowe, maile, telefon, social media – każdy kanał „żyje własnym życiem”.</li>
+                    <li>Część klientów nie doczekuje się szybkiej odpowiedzi i znika.</li>
+                    <li>Ciężko Ci powiedzieć, ile sprzedaży realnie pochodzi z internetu.</li>
+                    <li>Masz system CRM, ale nikt z zespołu tak naprawdę nie chce w nim pracować.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- DLACZEGO MY -->
-    <section id="dlaczego">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-kicker">Dlaczego warto</div>
-                <h2 class="section-title">Z nami Twoja firma zaczyna istnieć w internecie naprawdę</h2>
-                <p class="section-subtitle">
-                    Wiemy, że nie masz czasu ani ochoty uczyć się marketingu i technologii. Chcesz po prostu,
-                    żeby klienci Cię znajdowali, dzwonili i wracali. Dokładnie to dla Ciebie robimy.
-                </p>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">📍</div>
-                    <h3>Widzisz się na Google Maps</h3>
-                    <p>
-                        Jeśli dziś Twojej firmy nie widać na mapie, dla wielu klientów po prostu nie istniejesz.
-                        Po naszej konfiguracji pojawiasz się w lokalnych wynikach i rekomendacjach.
-                    </p>
-                    <p class="hero-note">
-                        Przykład: z „braku widoczności” do stałych telefonów każdego tygodnia.
-                    </p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🌐</div>
-                    <h3>Strona, która buduje zaufanie</h3>
-                    <p>
-                        Zamiast chaotycznego profilu na Facebooku masz nowoczesną stronę, na której klient
-                        w kilka sekund rozumie, czym się zajmujesz i jak się z Tobą skontaktować.
-                    </p>
-                    <p class="hero-note">
-                        Wrażenie „małej firmy” zastępujemy wizerunkiem profesjonalnego partnera.
-                    </p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Automatyzacje oszczędzają Twój czas</h3>
-                    <p>
-                        Rezerwacje online, automatyczne odpowiedzi, przypomnienia – mniej telefonów, mniej chaosu,
-                        więcej czasu na faktyczną pracę z klientami.
-                    </p>
-                    <p class="hero-note">
-                        Godzina dziennie odzyskana dzięki prostym automatyzacjom to realny zysk.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- USŁUGI -->
-    <section id="uslugi">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-kicker">Usługi</div>
-                <h2 class="section-title">Co konkretnie robimy dla Twojej firmy</h2>
-                <p class="section-subtitle">
-                    Projektujemy i wdrażamy kompletne rozwiązania: od widoczności w Google, przez stronę i social media,
-                    aż po automatyzacje, które pracują za Ciebie 24/7.
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Google Business -->
-                <div class="service-card">
-                    <div class="service-label">Google Business Profile • Google Maps</div>
-                    <h3>Twoja firma wreszcie widoczna w Google</h3>
-                    <p class="service-desc">
-                        Konfigurujemy i optymalizujemy Twój profil, dodajemy zdjęcia, opisy, godziny otwarcia
-                        i pokazujemy, jak zbierać opinie od zadowolonych klientów.
-                    </p>
-                    <ul class="service-list">
-                        <li>Założenie i konfiguracja profilu</li>
-                        <li>Dodanie firmy na Google Maps</li>
-                        <li>Zdjęcia, opis usług, godziny, kontakt</li>
-                        <li>Instrukcja zbierania opinii krok po kroku</li>
-                    </ul>
-                    <div class="before-after-block">
-                        <div class="ba-card">
-                            <div class="ba-title">Przed</div>
-                            <ul class="ba-list">
-                                <li>❌ Nie ma Cię na mapie</li>
-                                <li>❌ Klienci wpisują nazwę i nic nie znajdują</li>
-                                <li>❌ Brak opinii i zaufania</li>
-                            </ul>
-                        </div>
-                        <div class="ba-card">
-                            <div class="ba-title">Po</div>
-                            <ul class="ba-list">
-                                <li>✅ Jesteś widoczny na Google Maps</li>
-                                <li>✅ Klienci klikają „zadzwoń” i „wyznacz trasę”</li>
-                                <li>✅ Rośnie liczba opinii i zapytań</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="service-tagline">
-                        Dla wielu lokalnych klientów „jeśli nie ma Cię na Google Maps – nie istniejesz”.
-                    </p>
-                </div>
-
-                <!-- Strony WWW -->
-                <div class="service-card">
-                    <div class="service-label">Strony internetowe</div>
-                    <h3>Profesjonalna strona, która pracuje za Ciebie</h3>
-                    <p class="service-desc">
-                        Tworzymy nowoczesne strony-wizytówki skrojone pod lokalne usługi. Proste, czytelne,
-                        dopasowane do telefonu – takie, które zwiększają zaufanie i zachęcają do kontaktu.
-                    </p>
-                    <ul class="service-list">
-                        <li>Nowoczesny, responsywny design</li>
-                        <li>Oferta, cennik, galeria realizacji</li>
-                        <li>Formularz kontaktowy i mapa dojazdu</li>
-                        <li>Podstawowe SEO lokalne</li>
-                    </ul>
-                    <p class="service-tagline">
-                        Zamiast „znajdź mnie na Facebooku” dajesz klientowi profesjonalny adres www,
-                        który działa 24/7 i buduje Twój autorytet.
-                    </p>
-                </div>
-
-                <!-- Social Media -->
-                <div class="service-card">
-                    <div class="service-label">Social media</div>
-                    <h3>Social media, które pokazują, że firma żyje</h3>
-                    <p class="service-desc">
-                        Zakładamy i prowadzimy profile na Facebooku i Instagramie tak, aby Twoi klienci widzieli
-                        aktualne zdjęcia, realizacje i opinie zamiast pustych lub starych postów sprzed lat.
-                    </p>
-                    <ul class="service-list">
-                        <li>Konfiguracja profili FB/IG</li>
-                        <li>Szablony postów dopasowane do branży</li>
-                        <li>4–8 postów miesięcznie + moderacja wiadomości</li>
-                        <li>Krótkie filmiki i rolki (opcjonalnie)</li>
-                    </ul>
-                    <p class="service-tagline">
-                        Regularna, spójna komunikacja sprawia, że klienci widzą, iż firma działa i może im zaufać.
-                    </p>
-                </div>
-
-                <!-- Automatyzacje -->
-                <div class="service-card">
-                    <div class="service-label">Automatyzacje • Rezerwacje • Chatboty</div>
-                    <h3>Automatyzacje, które oszczędzają Twój czas</h3>
-                    <p class="service-desc">
-                        Wdrażamy proste narzędzia, które przejmują powtarzalne zadania: umawianie wizyt,
-                        odpowiadanie na podstawowe pytania, przypominanie o terminach.
-                    </p>
-                    <ul class="service-list">
-                        <li>System rezerwacji online</li>
-                        <li>Chatbot do prostych pytań klientów</li>
-                        <li>Automatyczne odpowiedzi i przypomnienia SMS</li>
-                        <li>Integracje z kalendarzem</li>
-                    </ul>
-                    <p class="service-tagline">
-                        Mniej telefonów i chaosu, więcej czasu na faktyczną pracę z klientami – bez zatrudniania dodatkowych osób.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CENNIK -->
-    <section id="cennik">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-kicker">Cennik i pakiety</div>
-                <h2 class="section-title">Proste pakiety dopasowane do małych firm</h2>
-                <p class="section-subtitle">
-                    Jasne ceny, konkretne efekty. Bez długich umów i ukrytych opłat. Płacisz za to,
-                    co realnie pomaga Ci zdobywać klientów.
-                </p>
-            </div>
-
-            <!-- Pakiety jednorazowe -->
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-badge">Najczęściej wybierany start</div>
-                    <div class="pricing-name">START ONLINE</div>
-                    <div class="pricing-price">1490 zł</div>
-                    <div class="pricing-meta">Jednorazowo • Kompletny start w sieci</div>
-                    <ul class="pricing-list">
-                        <li>Strona wizytówka (do 5 sekcji)</li>
-                        <li>Dodanie firmy na Google Maps</li>
-                        <li>Konfiguracja Google Business Profile</li>
-                        <li>Podstawowe SEO lokalne</li>
-                        <li>Szablony postów na social media</li>
-                    </ul>
-                    <div class="pricing-benefit">
-                        Idealny, jeśli dziś nie masz nic lub tylko Facebooka, a chcesz wyglądać profesjonalnie.
-                    </div>
-                </div>
-
-                <div class="pricing-card secondary">
-                    <div class="pricing-name">WIDOCZNY LOKALNIE</div>
-                    <div class="pricing-price">990 zł</div>
-                    <div class="pricing-meta">Jednorazowo • Dla firm bez strony</div>
-                    <ul class="pricing-list">
-                        <li>Pełna konfiguracja Google Business Profile</li>
-                        <li>Dodanie firmy na Google Maps</li>
-                        <li>Zdjęcia, opisy, godziny otwarcia</li>
-                        <li>Optymalizacja kategorii i słów kluczowych</li>
-                        <li>1 miesiąc opieki (aktualizacje, zdjęcia, posty)</li>
-                    </ul>
-                    <div class="pricing-benefit">
-                        Dla firm, które chcą być widoczne w Google bez inwestycji w stronę www.
-                    </div>
-                </div>
-
-                <div class="pricing-card secondary">
-                    <div class="pricing-name">PROFESJONALNY WIZERUNEK</div>
-                    <div class="pricing-price">1990 zł</div>
-                    <div class="pricing-meta">Jednorazowo • Wizerunek jak marka premium</div>
-                    <ul class="pricing-list">
-                        <li>Logo + kolorystyka + mini księga znaku</li>
-                        <li>Strona wizytówka</li>
-                        <li>Szablony postów do social media</li>
-                        <li>Zdjęcia stockowe dopasowane do branży</li>
-                    </ul>
-                    <div class="pricing-benefit">
-                        Dla firm, które chcą wyglądać nowocześnie i spójnie od pierwszego kontaktu.
-                    </div>
-                </div>
-
-                <div class="pricing-card secondary">
-                    <div class="pricing-name">AUTOMATYCZNA FIRMA</div>
-                    <div class="pricing-price">2490 zł</div>
-                    <div class="pricing-meta">Jednorazowo • Oszczędność czasu</div>
-                    <ul class="pricing-list">
-                        <li>System rezerwacji online</li>
-                        <li>Chatbot do obsługi klienta</li>
-                        <li>Automatyczne odpowiedzi i przypomnienia SMS</li>
-                        <li>Integracja z kalendarzem</li>
-                    </ul>
-                    <div class="pricing-benefit">
-                        Dla firm, które mają dużo zapytań i chcą mniej czasu spędzać na telefonie.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Abonamenty -->
-            <div class="section-header" style="margin-top: 2rem;">
-                <div class="section-kicker">Abonamenty</div>
-                <h2 class="section-title">Stała opieka i regularna widoczność</h2>
-                <p class="section-subtitle">
-                    Dla firm, które chcą mieć spokój – social media, Google Business i komunikacja z klientami
-                    obsługiwane za stałą, przewidywalną opłatę miesięczną.
-                </p>
-            </div>
-
-            <div class="pricing-subgrid">
-                <div class="pricing-subcard">
-                    <div class="pricing-subname">MINI</div>
-                    <div class="pricing-subprice">149 zł / mies.</div>
-                    <div class="pricing-submeta">Dla firm, które potrzebują podstawowej opieki.</div>
-                    <ul class="pricing-sublist">
-                        <li>1 post miesięcznie (FB/IG)</li>
-                        <li>Aktualizacja Google Business Profile</li>
-                        <li>Monitorowanie i podpowiedzi dot. opinii</li>
-                    </ul>
-                </div>
-
-                <div class="pricing-subcard">
-                    <div class="pricing-subname">STANDARD</div>
-                    <div class="pricing-subprice">349 zł / mies.</div>
-                    <div class="pricing-submeta">Najczęściej wybierany pakiet.</div>
-                    <ul class="pricing-sublist">
-                        <li>4 posty miesięcznie (FB/IG)</li>
-                        <li>Aktualizacja Google Business Profile</li>
-                        <li>Moderacja wiadomości</li>
-                        <li>Dodawanie zdjęć i realizacji</li>
-                        <li>Prosty raport miesięczny</li>
-                    </ul>
-                </div>
-
-                <div class="pricing-subcard">
-                    <div class="pricing-subname">PREMIUM</div>
-                    <div class="pricing-subprice">690 zł / mies.</div>
-                    <div class="pricing-submeta">Dla firm, które chcą pełnej obsługi.</div>
-                    <ul class="pricing-sublist">
-                        <li>8 postów miesięcznie (FB/IG)</li>
-                        <li>Rolki / krótkie filmiki</li>
-                        <li>Pełna moderacja wiadomości</li>
-                        <li>Comiesięczna optymalizacja Google Business</li>
-                        <li>Mini kampanie reklamowe (budżet klienta)</li>
-                        <li>Raport + rekomendacje</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p class="hero-note" style="margin-top: 1rem;">
-                Dodatkowe usługi: kampanie reklamowe od 300 zł, sesja zdjęciowa u klienta od 400 zł,
-                rozbudowane strony (np. z rezerwacjami lub sklepem) – wycena indywidualna.
+    <!-- PROBLEMS -->
+    <section id="problems" class="section-bg-light">
+        <div>
+            <div class="section-kicker">Problem, który kosztuje Cię realne pieniądze</div>
+            <h2 class="section-title">Sprzedaż z internetu nie jest pod kontrolą.</h2>
+            <p class="section-subtitle">
+                Pojedyncze wpadki z leadami są niewidoczne na co dzień. Ale w skali miesiąca i roku to już realny koszt.
             </p>
         </div>
-    </section>
 
-    <!-- OPINIE -->
-    <section id="opinie">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-kicker">Opinie klientów</div>
-                <h2 class="section-title">Co mówią właściciele małych firm</h2>
-                <p class="section-subtitle">
-                    Pracujemy z lokalnymi przedsiębiorcami, którzy nie chcą „magii marketingu”,
-                    tylko realnych efektów: telefonów, zapytań i powracających klientów.
+        <div class="problems-grid">
+            <div class="problem-item">
+                <div class="problem-image">
+                    <img src="images/problem-leads.jpg" alt="Rozproszone zapytania klientów i chaos w notatkach">
+                </div>
+                <div class="problem-label">Problem 1</div>
+                <h3 class="problem-title">Leady giną po drodze</h3>
+                <p class="problem-text">
+                    Część zapytań zostaje w skrzynce mailowej, część w Messengerze, część w notatkach handlowców.
+                    Nikt nie widzi pełnego obrazu.
                 </p>
             </div>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-quote">
-                        „Po dodaniu mojej firmy do Google Maps telefony zaczęły dzwonić codziennie.
-                        Wcześniej większość klientów mówiła, że nie mogła mnie znaleźć.”
-                    </p>
-                    <div class="testimonial-author">Marek, hydraulik z Warszawy</div>
+            <div class="problem-item">
+                <div class="problem-image">
+                    <img src="images/problem-slow.jpg" alt="Spóźniona reakcja na zapytania od klientów">
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-quote">
-                        „Strona wygląda profesjonalnie, klienci od razu widzą cennik i zdjęcia.
-                        Często słyszę: ‘znalazłam Panią w Google, wszystko było jasne’.”
-                    </p>
-                    <div class="testimonial-author">Kasia, kosmetyczka z Pragi</div>
+                <div class="problem-label">Problem 2</div>
+                <h3 class="problem-title">Reakcja jest za wolna</h3>
+                <p class="problem-text">
+                    Klient wysyła zapytanie, czeka na odpowiedź i… w międzyczasie dzwoni do konkurencji.
+                    Gdy oddzwaniacie, on już podjął decyzję.
+                </p>
+            </div>
+
+            <div class="problem-item">
+                <div class="problem-image">
+                    <img src="images/problem-control.jpg" alt="Brak przejrzystej kontroli nad sprzedażą">
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-quote">
-                        „Dzięki rezerwacjom online i automatycznym wiadomościom mam mniej telefonów,
-                        a kalendarz wreszcie jest uporządkowany. Klienci sami wybierają terminy.”
-                    </p>
-                    <div class="testimonial-author">Tomek, ogrodnik z okolic Warszawy</div>
+                <div class="problem-label">Problem 3</div>
+                <h3 class="problem-title">Brak kontroli nad procesem</h3>
+                <p class="problem-text">
+                    Masz poczucie, że „coś się dzieje”, ale nie potrafisz odpowiedzieć: ile leadów, na jakim etapie,
+                    z jaką skutecznością domyka sprzedaż.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE HELP -->
+    <section id="how">
+        <div class="two-column">
+            <div class="how-text">
+                <div class="section-kicker">Jak pomagamy</div>
+                <h2 class="section-title">Zamiast kolejnego narzędzia – prosty system, który działa w Twoim zespole.</h2>
+                <p>
+                    Nie sprzedajemy oprogramowania. Pracujemy z Tobą nad tym, żeby każdy lead z internetu miał swoje
+                    miejsce, właściciela i kolejny krok – od pierwszego kontaktu do zamknięcia sprzedaży.
+                </p>
+                <p>
+                    Projektujemy proces, dobieramy narzędzia i wdrażamy je tak, żeby zespół faktycznie chciał z nich korzystać
+                    – zamiast „klikać, bo trzeba”.
+                </p>
+                <ul>
+                    <li>Ujednolicamy zbieranie leadów z wielu kanałów.</li>
+                    <li>Ustawiamy jasne zasady reakcji na zapytania.</li>
+                    <li>Budujemy prosty, zrozumiały widok procesu sprzedaży.</li>
+                </ul>
+            </div>
+            <div class="how-image">
+                <img src="images/how-we-work.jpg" alt="Praca doradcza AgileLab z klientem nad procesem sprzedaży">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS STEPS -->
+    <section id="process" class="section-bg-light">
+        <div>
+            <div class="section-kicker">Proces współpracy</div>
+            <h2 class="section-title">Od audytu do systemu, który żyje w Twojej firmie.</h2>
+            <p class="section-subtitle">
+                Przechodzimy z Tobą przez cztery etapy – tak, żeby na końcu powstało rozwiązanie, które jest używane
+                na co dzień, a nie tylko „wdrożone”.
+            </p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-image">
+                    <img src="images/step-audit.jpg" alt="Analiza obecnego procesu pozyskiwania leadów">
+                </div>
+                <div class="step-number">Krok 1</div>
+                <h3 class="step-title">Audyt obecnej sytuacji</h3>
+                <p class="step-text">
+                    Przeglądamy, skąd przychodzą leady, jak są obsługiwane i gdzie po drodze znikają.
+                    Rozmawiamy z osobami, które na co dzień pracują z klientami.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-image">
+                    <img src="images/step-design.jpg" alt="Projektowanie nowego procesu sprzedaży i pracy z CRM">
+                </div>
+                <div class="step-number">Krok 2</div>
+                <h3 class="step-title">Projekt procesu i systemu</h3>
+                <p class="step-text">
+                    Układamy prosty, zrozumiały proces sprzedaży i dobieramy narzędzia (np. CRM), które go wspierają,
+                    zamiast komplikować codzienną pracę.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-image">
+                    <img src="images/step-implementation.jpg" alt="Wdrożenie systemu CRM i ustawienie przepływu leadów">
+                </div>
+                <div class="step-number">Krok 3</div>
+                <h3 class="step-title">Wdrożenie i konfiguracja</h3>
+                <p class="step-text">
+                    Konfigurujemy system, przepływy leadów, widoki dla zespołu. Dbamy o to, żeby wszystko było
+                    proste w użyciu i spójne z ustalonym procesem.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-image">
+                    <img src="images/step-handover.jpg" alt="Przekazanie systemu do codziennej pracy zespołu sprzedaży">
+                </div>
+                <div class="step-number">Krok 4</div>
+                <h3 class="step-title">Przekazanie i wsparcie na starcie</h3>
+                <p class="step-text">
+                    Uczymy zespół, jak pracować w nowym systemie, i towarzyszymy Wam w pierwszych tygodniach –
+                    poprawiając proces tam, gdzie to potrzebne.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages">
+        <div>
+            <div class="section-kicker">Formy współpracy</div>
+            <h2 class="section-title">Wybierz poziom wsparcia dopasowany do Twojej sytuacji.</h2>
+            <p class="section-subtitle">
+                Zaczynamy od małego, konkretnego zakresu – albo bierzemy na siebie kompleksowe poukładanie procesu
+                i systemu, jeśli tego potrzebujesz.
+            </p>
+        </div>
+
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-name">START</div>
+                <div class="package-desc">Szybki przegląd sytuacji i priorytety na najbliższe tygodnie.</div>
+                <div class="package-price">od 3 500 zł netto</div>
+                <ul class="package-list">
+                    <li>Analiza obecnego przepływu leadów i sprzedaży.</li>
+                    <li>Wskazanie największych „dziur” w procesie.</li>
+                    <li>Rekomendacje konkretnych zmian na najbliższe 4–6 tygodni.</li>
+                </ul>
+                <div class="package-footer">
+                    <a href="#contact" class="btn btn-outline">Porozmawiajmy o tym wariancie</a>
+                </div>
+            </div>
+
+            <div class="package-card package-featured">
+                <div class="package-badge">Najczęstszy wybór</div>
+                <div class="package-name">GROWTH</div>
+                <div class="package-desc">Pełne poukładanie procesu pozyskiwania klientów z internetu.</div>
+                <div class="package-price">od 9 500 zł netto</div>
+                <ul class="package-list">
+                    <li>Audyt procesu + projekt docelowego przepływu leadów.</li>
+                    <li>Dobór narzędzi (w tym CRM) dopasowanych do Twojej firmy.</li>
+                    <li>Wdrożenie kluczowych elementów i wsparcie dla zespołu.</li>
+                    <li>Prosty zestaw raportów do kontroli sprzedaży.</li>
+                </ul>
+                <div class="package-footer">
+                    <a href="#contact" class="btn btn-primary">Umów rozmowę o GROWTH</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="package-name">PRO</div>
+                <div class="package-desc">Dłuższa współpraca i dalsze skalowanie procesów sprzedaży.</div>
+                <div class="package-price">wycena indywidualna</div>
+                <ul class="package-list">
+                    <li>Rozszerzone wdrożenie CRM i automatyzacji.</li>
+                    <li>Praca nad pipeline’ami dla różnych linii biznesowych.</li>
+                    <li>Stałe wsparcie w optymalizacji procesu sprzedaży.</li>
+                </ul>
+                <div class="package-footer">
+                    <a href="#contact" class="btn btn-outline">Zapytaj o wariant PRO</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- KONTAKT -->
-    <section id="kontakt">
-        <div class="container">
-            <div class="section-header">
+    <!-- CONTACT -->
+    <section id="contact" class="section-bg-light">
+        <div class="contact-grid">
+            <div class="contact-image">
+                <img src="images/contact.jpg" alt="Doradca AgileLab gotowa do rozmowy z klientem">
+            </div>
+            <div>
                 <div class="section-kicker">Kontakt</div>
-                <h2 class="section-title">Porozmawiajmy o Twojej firmie</h2>
+                <h2 class="section-title">Zacznijmy od krótkiej rozmowy o Twojej sytuacji.</h2>
                 <p class="section-subtitle">
-                    Napisz kilka słów o swojej działalności, a zaproponujemy rozwiązanie dopasowane
-                    do Twojej branży, lokalizacji i budżetu. Bez zobowiązań.
+                    Opowiesz krótko, jak dziś pozyskujesz klientów z internetu. Ja pokażę Ci, gdzie najczęściej
+                    uciekają pieniądze i co możemy z tym zrobić.
                 </p>
-            </div>
 
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <form class="contact-form" id="contactForm">
-                        <div class="field">
-                            <label for="name">Imię i nazwisko</label>
-                            <input type="text" id="name" name="from_name" placeholder="Np. Anna Kowalska" required>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Imię</label>
+                            <input id="name" type="text" name="name" placeholder="Jak się nazywasz?">
                         </div>
-                        <div class="field">
-                            <label for="email">Adres e-mail</label>
-                            <input type="email" id="email" name="reply_to" placeholder="Np. kontakt@twojafirma.pl" required>
+                        <div class="form-group">
+                            <label for="company">Firma</label>
+                            <input id="company" type="text" name="company" placeholder="Nazwa firmy (opcjonalnie)">
                         </div>
-                        <div class="field">
-                            <label for="phone">Numer telefonu</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Np. 500 000 000" required>
-                        </div>
-                        <div class="field">
-                            <label for="service">Wybierz usługę</label>
-                            <select id="service" name="service">
-                                <option value="">Wybierz interesującą Cię opcję</option>
-                                <option value="strona">Strona www</option>
-                                <option value="maps">Google Maps / Google Business</option>
-                                <option value="social">Social media</option>
-                                <option value="automatyzacje">Automatyzacje / rezerwacje</option>
-                                <option value="pakiet">Pakiet (np. START ONLINE)</option>
-                                <option value="inne">Inne / nie wiem, potrzebuję porady</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="message">Wiadomość</label>
-                            <textarea id="message" name="message" placeholder="Opisz krótko swoją firmę i czego potrzebujesz." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">
-                            Wyślij wiadomość
-                        </button>
-                        <div class="form-status" id="formStatus" style="display:none;">
-                            <span class="dot"></span>
-                            <span class="form-status-text"></span>
-                        </div>
-                        <p class="contact-help">
-                            Odpowiadamy zazwyczaj tego samego dnia roboczego. Możemy zaproponować konkretny pakiet
-                            albo indywidualne rozwiązanie dopasowane do Twojej branży.
-                        </p>
-                    </form>
-                </div>
-
-                <div class="contact-info-card">
-                    <div class="contact-info-item">
-                        <div class="contact-info-label">E-mail</div>
-                        <div class="contact-info-value">kontakt@agilelab.pl</div>
                     </div>
-                    <div class="contact-info-item">
-                        <div class="contact-info-label">Telefon</div>
-                        <div class="contact-info-value">+48 000 000 000</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" placeholder="Do kontaktu z Tobą">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input id="phone" type="tel" name="phone" placeholder="Jeśli wolisz rozmowę">
+                        </div>
                     </div>
-                    <div class="contact-info-item">
-                        <div class="contact-info-label">Lokalizacja</div>
-                        <div class="contact-info-value">Warszawa, współpraca online w całej Polsce</div>
+                    <div class="form-group">
+                        <label for="message">Kilka słów o sytuacji</label>
+                        <textarea id="message" name="message" placeholder="Napisz, jak dziś zbierasz i obsługujesz leady z internetu."></textarea>
                     </div>
-                    <div class="contact-badge">
-                        <span>✓</span> Pierwsza konsultacja bezpłatna
+                    <div class="form-footer">
+                        <div class="form-consent">
+                            <input id="consent" type="checkbox" name="consent">
+                            <label for="consent">
+                                Wyrażam zgodę na kontakt w celu odpowiedzi na moje zapytanie. Administratorem danych jest AgileLab.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Wyślij i umów rozmowę</button>
                     </div>
-                    <p style="margin-top: 0.7rem;">
-                        Możemy umówić krótką rozmowę telefoniczną lub spotkanie online,
-                        podczas którego przeanalizujemy Twoją obecną widoczność w sieci
-                        i zaproponujemy konkretne kroki.
-                    </p>
-                </div>
+                </form>
             </div>
         </div>
     </section>
-</main>
 
-<footer>
-    <div class="container footer-grid">
-        <div>© <span id="year"></span> AgileLab – nowoczesne rozwiązania online dla lokalnych usługodawców</div>
-        <div class="footer-links">
-            <span>Polityka prywatności</span>
-            <span>Regulamin</span>
+    <!-- FOOTER -->
+    <footer>
+        <div>© AgileLab – uporządkowana sprzedaż z internetu.</div>
+        <div>
+            <a href="#packages">Oferta</a> ·
+            <a href="#contact">Kontakt</a>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-    // Rok w stopce
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Inicjalizacja EmailJS (wklej swój PUBLIC KEY)
-    (function() {
-        emailjs.init("TWÓJ_PUBLIC_KEY");
-    })();
-
-    const form = document.getElementById("contactForm");
-    const statusEl = document.getElementById("formStatus");
-    const statusText = statusEl.querySelector(".form-status-text");
-    const submitBtn = document.getElementById("submitBtn");
-
-    function setStatus(type, text) {
-        statusEl.style.display = "flex";
-        statusEl.classList.remove("loading", "success", "error");
-        statusEl.classList.add(type);
-        statusText.textContent = text;
-    }
-
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        // Prosta walidacja
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const phone = form.phone.value.trim();
-        const message = form.message.value.trim();
-
-        if (!name || !email || !phone || !message) {
-            setStatus("error", "Uzupełnij proszę wszystkie wymagane pola.");
-            return;
-        }
-
-        // Prosta walidacja emaila
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            setStatus("error", "Podaj poprawny adres e-mail.");
-            return;
-        }
-
-        // Loader
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Wysyłanie...";
-        setStatus("loading", "Wysyłamy Twoją wiadomość...");
-
-        emailjs.sendForm("service_xxxxxx", "template_xxxxxx", this)
-            .then(() => {
-                setStatus("success", "Dziękujemy! Wiadomość została wysłana. Odezwę się tak szybko, jak to możliwe.");
-                form.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Wyślij wiadomość";
-            }, (error) => {
-                console.error("EmailJS error:", error);
-                setStatus("error", "Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub skontaktuj się bezpośrednio.");
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Wyślij wiadomość";
-            });
-    });
-</script>
+</div>
 
 </body>
 </html>
